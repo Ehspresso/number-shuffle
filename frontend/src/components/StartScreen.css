@@ -1,0 +1,54 @@
+.wrapper {
+  border: 5px solid red;
+  border-radius: 5px;
+  background-color: transparent;
+  width: max-content;
+  margin-bottom: auto;
+  margin-top: auto;
+  font-size: 3em;
+}
+
+.levels {
+  text-align: center;
+}
+
+.levels label {
+  font-size: 0.75em;
+  margin: 3px;
+}
+
+.levels button {
+  background-color: transparent;
+  font-size: 0.75em;
+  border: none;
+}
+
+.levels button:hover {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+label img {
+  visibility: hidden;
+  margin-right: 5px;
+}
+
+.level {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+label:hover img {
+  visibility: visible;
+}
+
+.level:checked + img {
+  visibility: visible;
+}
+
+.signin {
+  font-family: Verdana;
+  color: black;
+}

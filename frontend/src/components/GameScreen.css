@@ -1,0 +1,24 @@
+.score {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 2em;
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    color: red;
+    font-size: 2em;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
