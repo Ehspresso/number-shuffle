@@ -39,9 +39,9 @@ export default function StartScreen({handleClick}) {
                 />
                 {visible && (
                 <form className="dbz-font levels" onSubmit={handleSubmit}>
-                    <label><input onClick={handleOptionClick} className="level" name="level" type="radio" value="5" /><img src="./assets/dragonball.png" style={{height: "15px", width: "15px"}}></img>Easy</label>
-                    <label><input onClick={handleOptionClick} className="level" name="level" type="radio" value="10" /><img src="./assets/dragonball.png" style={{height: "15px", width: "15px"}}></img>Medium</label>
-                    <label style={{marginRight: "20px"}}><input onClick={handleOptionClick} className="level" name="level" type="radio" value="20" /><img src="./assets/dragonball.png" style={{height: "15px", width: "15px"}}></img>Hard</label>
+                    <label className="level"><input onClick={handleOptionClick} name="level" type="radio" value="5" />Easy</label>
+                    <label className="level"><input onClick={handleOptionClick} name="level" type="radio" value="10" />Medium</label>
+                    <label className="level" style={{marginRight: "20px"}}><input onClick={handleOptionClick} name="level" type="radio" value="20" />Hard</label>
                     <br />
                     <button className="dbz-font" type="submit">Start Game</button>
                 </form>)}

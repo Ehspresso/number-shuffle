@@ -33,11 +33,13 @@ label img {
   margin-right: 5px;
 }
 
-.level {
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
+input {
+  display: none;
+}
+
+.level input:checked {
+  background-color: #007bff; /* Fill with blue when selected */
+  border-color: #0056b3;
 }
 
 label:hover img {
@@ -51,4 +53,45 @@ label:hover img {
 .signin {
   font-family: Verdana;
   color: black;
+}
+
+/* Hide the radio input */
+input {
+  display: none; /* Completely hides the input element */
+}
+
+/* Style the label as a button */
+.levels label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 0.75em;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa; /* Light background by default */
+  text-align: center;
+}
+
+/* Hover effect for the label */
+.levels label:hover {
+  background-color: #e2e6ea;
+  border-color: #007bff;
+}
+
+/* Checked style */
+input:checked + label {
+  border-color: #0056b3; /* Darker blue border */
+  background-color: #007bff; /* Solid blue fill */
+  color: white; /* Optional: make text white */
+}
+
+/* Optional: Focus effect for accessibility */
+input:focus + label {
+  outline: 2px solid #0056b3;
+}
+
+label:hover img {
+  visibility: visible;
 }

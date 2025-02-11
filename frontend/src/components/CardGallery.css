@@ -1,19 +1,41 @@
-.item-container {
-    transition: transform 0.3s;
-    padding: 1%;
-    box-sizing: border-box;
-}
-
-.item-container:hover {
-    transform: scale(0.8);
-}
-
+/* Styling for the deck container */
 .container {
-    padding: 50px;
+    padding: 20px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
+    justify-content: center; /* Center the row */
+    align-items: center;
+    flex-wrap: wrap; /* Wrap cards when necessary */
+    gap: 15px; /* Add space between the cards */
+}
+
+/* Styling for individual cards */
+.card {
+    transition: transform 0.3s;
+    padding: 1%;
+    box-sizing: border-box;
+
+    /* Adaptive sizing for cards */
+    width: 10vw; /* Default width as a percentage of viewport width */
+    height: 15vw; /* Default height as a percentage of viewport width */
+    max-width: 150px; /* Maximum card width */
+    max-height: 200px; /* Maximum card height */
+    min-width: 60px; /* Minimum card width */
+    min-height: 80px; /* Minimum card height */
+
+    font-size: 2em; /* Default font size for numbers */
+    background-color: #f9f9f9;
+    border: 3px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+/* Add hover effect to cards */
+.card:hover {
+    transform: scale(0.9); /* Slight shrink on hover */
 }

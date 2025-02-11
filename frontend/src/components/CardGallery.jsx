@@ -4,31 +4,16 @@ import './CardGallery.css'
 
 export default function CardGallery({level, onclick}) {
 
-    const [data, setData] = useState([]);
     const[selected, setSelected] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("https://dragonball-api.com/api/characters");
-                const data = await response.json();
-    
-                let planetData = [];
-                if (level == 20) {
-                    const planetResponse = await fetch("https://dragonball-api.com/api/planets");
-                    planetData = await planetResponse.json();
-                }
-                planetData.length === 0 ? setData(data.items) : setData([...data.items, ...planetData.items]);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-    
-        fetchData();
-    }, []);
+    const deck = ["१", "२", "३", "४", "५", "६", "७", "८", "९", "१०"];
 
-    const shuffledImages = data.sort(() => Math.random() - 0.5);
-    const cards = shuffledImages.slice(0, level);
+    const [cards, setCards] = useState(deck);
+
+    const shuffleCards = () => {
+        const shuffled = [...cards].sort(() => Math.random() - 0.5); // Random shuffle
+        setCards(shuffled); // Update state
+      };
 
     function handleOnclick(e) {
         const audio = document.querySelector("#sound-select");
@@ -40,20 +25,20 @@ export default function CardGallery({level, onclick}) {
         } else {
             onclick.handler("Gameover!");
         }
-        setData(cards.sort(() => Math.random() - 0.5));
+        shuffleCards();
     }
 
     return(
         <div className="container">
-            {cards.map(item => {
+            {cards.map((card, index) => {
                 return (
                     <div
-                    key={cards.indexOf(item)}
-                    className="item-container" 
+                    key={index}
+                    className="card" 
                     style={{maxWidth: "9%"}} 
                     onClick={handleOnclick}
                     >
-                    <img src={item.image} style={{width: "100%"}}></img>
+                    {card}
                 </div>
             );})}
         </div>
