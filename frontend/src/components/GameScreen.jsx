@@ -18,7 +18,7 @@ export default function GameScreen({ level }) {
                 <div className="game-content">
                     <p className="time dbz-font"><b>Time: <Stopwatch callback={setFinalTime}/></b></p>
                     <h2 className="dbz-font score">Score: {score}/{level}</h2>
-                    <CardGallery level={level} onclick={{score: score, handler: setScore}}/>
+                    <CardGallery level={level} onclick={setScore} />
                 </div>)}
             
             {score == level && (
