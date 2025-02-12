@@ -14,14 +14,14 @@ export default function GameScreen({ level }) {
 
     return (
         <>
-            {score != "Gameover!" && score != level && (
+            {score != "Gameover!" && score != 10 && (
                 <div className="game-content">
                     <p className="time dbz-font"><b>Time: <Stopwatch callback={setFinalTime}/></b></p>
-                    <h2 className="dbz-font score">Score: {score}/{level}</h2>
+                    <h2 className="dbz-font score">Score: {score}/{10}</h2>
                     <CardGallery level={level} onclick={setScore} />
                 </div>)}
             
-            {score == level && (
+            {score == 10 && (
             <div className="controls">
                 <h2 className="dbz-font score">Score: {level / time.current}</h2>
                 <form action="/"><button type="submit">Return to Home Screen</button></form>
